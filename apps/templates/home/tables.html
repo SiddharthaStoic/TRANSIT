@@ -1,0 +1,286 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Tables {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Table 1 -->
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> BUSES </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      License Plate
+                    </th>
+                    <th>
+                      Route Name
+                    </th>
+                    <th>
+                      Driver Number
+                    </th>
+                    <th>
+                      Conductor Number
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for bus in all_buses %}
+                  <tr>
+                    <td>
+                      {{ bus.LICENSE_PLATE }}
+                    </td>
+                    <td>
+                      {{ bus.ROUTE_NAME }}
+                    </td>
+                    <td>
+                      {{ bus.D_NO }}
+                    </td>
+                    <td>
+                      {{ bus.C_NO }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <!-- Table 2 -->
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> DRIVERS </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Driver Number
+                    </th>
+                    <th>
+                      Driver Name
+                    </th>
+                    <th>
+                      Age
+                    </th>
+                    <th>
+                      Sex
+                    </th>
+                    <th>
+                      Join Date
+                    </th>
+                    <th>
+                      Experience
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for driver in all_drivers %}
+                  <tr>
+                    <td>
+                      {{ driver.D_NO }}
+                    </td>
+                    <td>
+                      {{ driver.D_NAME }}
+                    </td>
+                    <td>
+                      {{ driver.AGE }}
+                    </td>
+                    <td>
+                      {{ driver.SEX }}
+                    </td>
+                    <td>
+                      {{ driver.JOIN_DATE }}
+                    </td>
+                    <td>
+                      {{ driver.EXPERIENCE }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <!-- Table 3 -->
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> CONDUCTORS </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Conductor Number
+                    </th>
+                    <th>
+                      Conductor Name
+                    </th>
+                    <th>
+                      Age
+                    </th>
+                    <th>
+                      Sex
+                    </th>
+                    <th>
+                      Join Date
+                    </th>
+                    <th>
+                      Experience
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for conductor in all_conductors %}
+                  <tr>
+                    <td>
+                      {{ conductor.C_NO }}
+                    </td>
+                    <td>
+                      {{ conductor.C_NAME }}
+                    </td>
+                    <td>
+                      {{ conductor.AGE }}
+                    </td>
+                    <td>
+                      {{ conductor.SEX }}
+                    </td>
+                    <td>
+                      {{ conductor.JOIN_DATE }}
+                    </td>
+                    <td>
+                      {{ conductor.EXPERIENCE }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <!-- Table 4 -->
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> ROUTES </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Route Name
+                    </th>
+                    <th>
+                      Source
+                    </th>
+                    <th>
+                      Destination
+                    </th>
+                    <th>
+                      Pickup Time
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for route in all_routes %}
+                  <tr>
+                    <td>
+                      {{ route.ROUTE_NAME }}
+                    </td>
+                    <td>
+                      {{ route.SOURCE }}
+                    </td>
+                    <td>
+                      {{ route.DESTINATION }}
+                    </td>
+                    <td>
+                      {{ route.PICKUP_TIME }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <!-- Table 5 -->
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title"> PASSENGERS </h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table tablesorter " id="">
+                <thead class=" text-primary">
+                  <tr>
+                    <th>
+                      Passenger Number
+                    </th>
+                    <th>
+                      Passenger Name
+                    </th>
+                    <th>
+                      Sex
+                    </th>
+                    <th>
+                      Route Name
+                    </th>
+                    <th>
+                      Pickup Time
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for passenger in all_passengers %}
+                  <tr>
+                    <td>
+                      {{ passenger.P_NO }}
+                    </td>
+                    <td>
+                      {{ passenger.P_NAME }}
+                    </td>
+                    <td>
+                      {{ passenger.SEX }}
+                    </td>
+                    <td>
+                      {{ passenger.ROUTE_NAME }}
+                    </td>
+                    <td>
+                      {{ passenger.PICKUP_TIME }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

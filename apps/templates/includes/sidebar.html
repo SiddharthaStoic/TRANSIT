@@ -1,0 +1,51 @@
+
+    <div class="sidebar">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+      -->
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a class="simple-text logo-normal" style="text-align: center;">
+                    TRANSIT
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="{% if 'index' in segment %} active {% endif %} ">
+                    <a href="/">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="{% if 'notifications' in segment %} active {% endif %}">
+                    <a href="https://siddharthastoic.github.io/bustracker/">
+                        <i class="tim-icons icon-pin"></i>
+                        <p>Tracking</p>
+                    </a>
+                </li>
+                <li class="{% if 'tables' in segment %} active {% endif %}">
+                    <a href="/tables">
+                        <i class="tim-icons icon-bus-front-12"></i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+                <li class="{% if 'notifications' in segment %} active {% endif %}">
+                    <a href="/driversignup">
+                        <i class="tim-icons icon-badge"></i>
+                        <p>Sign Up (Driver)</p>
+                    </a>
+                </li>
+                <li class="{% if 'notifications' in segment %} active {% endif %}">
+                    <a href="/conductorsignup">
+                        <i class="tim-icons icon-badge"></i>
+                        <p>Sign Up (Conductor)</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <i class="tim-icons icon-button-power"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
