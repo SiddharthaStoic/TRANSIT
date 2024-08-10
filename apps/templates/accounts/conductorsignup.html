@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Join Today!</h1>
+	<br/><br/>
+
+	<form method="POST" action="{% url 'conductorsignup' %}">
+	{% csrf_token %}
+
+	<div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Name" name="C_NAME">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Conductor Number" name="C_NO">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Age" name="AGE">
+  </div>
+
+   <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Sex" name="SEX">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Join Date" name="JOIN_DATE">
+  </div>
+
+  <div class="mb-3">
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Previous Experience (if any)" name="EXPERIENCE">
+  </div>
+
+  <div class="mb-3">
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" name="C_EMAIL">
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="C_PASS">
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-secondary">Sign Up</button>
+</form>
+
+{% endblock %}

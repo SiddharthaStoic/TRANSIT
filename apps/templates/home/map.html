@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Bus Tracker {% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-plain">
+          <div class="card-header">
+            Bus Tracker
+          </div>
+          <div class="card-body">
+            <div id="map" class="map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-AJEjKJhhPKAP9N7pmRäumecpz0yKPBZrLWXcXuypPkW+aRY5CmA+ejEq9kHNakaBVl+GcEzgom+vJEj-Fw==" crossorigin=""></script>
+<script>
+  $(document).ready(function() {
+    // Access bus data from context variable (replace with actual data structure)
+    const buses = [
+      { name: "Bus 1", stops: [
+        { latitude: 40.752778, longitude: -73.977222 }, //Grand Central
+        { latitude: 40.758611, longitude: -73.979167 }, //Rockerfeller Centre
+        { latitude: 40.761667, longitude: -73.9775 }, //Museum of Modern Art
+        { latitude: 40.765, longitude: -73.98 }, //Carnegie Hall
+        { latitude: 40.773500, longitude: -73.994980 }, //Pier 99
+        { latitude: 40.7646, longitude: -73.9996 }, //Intrepid Museum
+        { latitude: 40.7575, longitude: -73.985833 }, //Times Square
+      ]},
+      { name: "Bus 2", stops: [
+        // Add stops for Bus 2 here
+      ]},
+      // Add data for remaining buses (Bus 3, Bus 4, Bus 5)
+    ];
+
+    // Initialize the map
+    const map = L.map('map').setView([41.90278, -87.62317], 13);
+
+    // Set base tile layer (e.g., OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Loop through buses and create markers for each stop
+    for (const bus of buses) {
+      const busName = bus.name; // Store bus name for marker popups (optional)
+      for (const stop of bus.stops) {
+        const marker = L.marker([stop.latitude, stop.longitude]).addTo(map);
+        marker.bindPopup(`<b>${busName} Stop</b>`); // Optional popup with bus name
+      }
+    }
+
+  });
+</script>
+
+{% endblock javascripts %}
