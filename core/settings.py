@@ -40,16 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.home',  # Enable the inner home (home)
-    'leaflet',
 ]
-
-LEAFLET_CONFIG = {
-    'DEFAULT_TILE_LAYER': (
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {'attribution': '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}
-    ),
-}
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
